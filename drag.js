@@ -1,11 +1,7 @@
 const dragbox = document.getElementById("dragbox");
 
-const blocks_positions = [];
 const initial_blocks = dragbox.innerText.trim().split(" ");
 dragbox.innerHTML = "";
-dragbox.addEventListener("mouseover", (e) => {
-  moveCursor(e.layerX, e.layerY);
-});
 
 populateBox(initial_blocks);
 
@@ -22,29 +18,57 @@ function createBlock(text) {
   return block;
 }
 
+let whereToPlaceReference = null;
+
 function populateBox(list) {
   list.forEach((item) => {
     const block = createBlock(item);
     dragbox.appendChild(block);
-    blocks_positions.push([block.offsetLeft, block.offsetTop]);
-  });
-}
+    block.addEventListener("dragstart", (e) => {
+      block.classList.add("dragging");
+    });
+    block.addEventListener("dragend", (event) => {
+      block.classList.remove("dragging");
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
 
-function moveCursor(x, y) {
-  dragbox.removeChild(cursor);
-  let minY = blocks_positions[0][1];
-  let minX = blocks_positions[0][0];
-  blocks_positions.forEach((position, index) => {
-    if (
-      Math.abs(position[1] - y) <= minY &&
-      Math.abs(position[0] - x) <= minX
-    ) {
-      console.log(position, index);
-      console.log(minY, minX);
-      console.log(y, x);
-      minY = Math.abs(position[1] - y);
-      minX = Math.abs(position[0] - x);
-      dragbox.insertBefore(cursor, dragbox.children[index]);
-    }
+      const elements = document.querySelectorAll(".code-block");
+      let closestElement = null;
+      let closestDistance = Infinity;
+      elements.forEach(function (element) {
+        const rect = element.getBoundingClientRect();
+        const elementX = rect.left + rect.width / 2;
+        const elementY = rect.top + rect.height / 2;
+
+        const distance = Math.hypot(elementX - mouseX, elementY - mouseY);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestElement = element;
+        }
+      });
+      if (closestElement) {
+        document
+          .querySelectorAll(".highlight")
+          .forEach((el) => el.classList.remove("highlight"));
+        closestElement.classList.add("highlight");
+
+        const closestRect = closestElement.getBoundingClientRect();
+        const closestElementX = closestRect.left + closestRect.width / 2;
+
+        if (mouseX < closestElementX) {
+          dragbox.insertBefore(block, closestElement);
+          whereToPlaceReference = closestElement;
+        } else {
+          try {
+            dragbox.insertBefore(block, closestElement.nextSibling);
+            whereToPlaceReference = closestElement.nextSibling;
+          } catch {
+            dragbox.insertBefore(block, closestElement);
+            whereToPlaceReference = closestElement;
+          }
+        }
+      }
+    });
   });
 }
