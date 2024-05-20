@@ -1,35 +1,58 @@
 const code_blocks = document.querySelectorAll('.code-block');
 const dragbox = document.querySelector('.dragbox');
 
-const blocks_position = []
 
-code_blocks.forEach(block => {
+code_blocks.forEach((block) => {
+    block.dragable = true
+    let refElement
+    block.addEventListener("drag", (e) => {
+        console.log(e.clientX, e.clientY);
+        refElement = getClosest(e.clientX, e.clientY)
+        displayShadow(refElement)
+    })
+    block.addEventListener("dragend", (e) => {
+        console.log(e.clientX, e.clientY);
+        refElement = getClosest(e.clientX, e.clientY)
+        dropElement(refElement)
+    })
+})
 
-    block.setAttribute('draggable', 'true');
 
-    blocks_position.push([block.offsetTop, block.offsetLeft]);
+function getClosest(mouseX, mouseY) {
 
-    block.addEventListener('dragstart', (e) => {
-        block.classList.add('dragging');
-    });
-    block.addEventListener('dragend', (e) => {
-        console.log(e);
-        blocks_position.forEach((position, index) => {
-            
-        });
+    let closestElement = null;
+    let closestDistance = Infinity;
 
-        block.classList.remove('dragging');
-    });
-});
-
-function getTwoClossestBlocks() {
-    blocks_position.forEach((position, index) => {
+    dragbox.forEach((element) => {
         
-    });
+        const rect = element.getBoundingClientRect();
+        const elementX = rect.left + (rect.width / 2);
+        const elementY = rect.top + (rect.height / 2);
 
+        const distance = Math.hypot(elementX - mouseX, elementY - mouseY);
 
-    return [index1, index2];
+        // Find closest element
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestElement = element;
+        }
+    })
 
+    let refElement
+
+    if (mouseX < closestElement) {
+        refElement = closestElement
+    } else {
+        refElement = closestElement.nextSibling
+    }
+
+    return refElement
 }
 
-console.log(blocks_position);
+function displayShadow(refElement) {
+    
+}
+
+function dropElement(refElement) {
+    
+}
