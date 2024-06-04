@@ -89,7 +89,7 @@ campoKeyUp.addEventListener("keyup", () => {
     } else if (valCampo == "") {
       span1[i].classList.remove("certa");
       span2[i].classList.remove("errado");
-
+      span3[i].classList.remove("errado");
     }
 
 // if (valCampo == "divmuitolegal") {
