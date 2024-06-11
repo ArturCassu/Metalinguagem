@@ -12,7 +12,7 @@ main{
 section{
     height: 80vh;
     width: 80vw;
-    padding: 10%;
+    padding: 6%;
     box-sizing: border-box;
     background-color: rgb(255, 255, 69);
     border-radius: 30px;
