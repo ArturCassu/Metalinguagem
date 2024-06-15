@@ -24,9 +24,33 @@ article {
     padding: 5% 7.5%;
 }
 
-body{font-family: sans-serif;margin: 15%;}
-h1,h2{font-family: 'Linux Libertine','Georgia','Times','Source Serif Pro',serif; font-weight: normal;}
-p,li{font-size: 0.875rem; line-height:1.5714285 ;}
+body{
+    font-family: sans-serif;
+}
+h1,h2{
+    font-family: 'Linux Libertine','Georgia','Times','Source Serif Pro',serif;
+    font-weight: normal;
+    }
+p,li{
+    font-size: 0.875rem; 
+    line-height:1.5714285 ;}
+
 a{
     text-decoration: none;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    background-color: #F7DF1E;
+    width: 100%;
+}
+
+#JSimg{
+    width: 5%;
+}
+#h1Header{
+    padding-left: 550px;
+    padding-right: 440px;
 }
