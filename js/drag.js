@@ -1,6 +1,5 @@
 const initialString = `const draggableElement = document.getElementById('draggable');
   draggableElement.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain','DraggedElement');
     draggableElement.style.opacity='0.5'; 
   });
   draggableElement.addEventListener('dragend', () => {

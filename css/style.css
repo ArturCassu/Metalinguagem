@@ -38,7 +38,10 @@ h1,h2{
     font-weight: normal;
     }
 p,li{
-    font-size: 0.875rem; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height:1.5714285
+}
 
 a{
     text-decoration: none;
@@ -54,8 +57,19 @@ header{
 
 #JSimg{
     width: 5%;
+    margin: 5px
 }
 #h1Header{
     padding-left: 550px;
     padding-right: 440px;
+}
+article pre{
+    border: aliceblue;
+    background-color: #2C2C2A;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+h2{
+    margin-top: 10%;
 }
