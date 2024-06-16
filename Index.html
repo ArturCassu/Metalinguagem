@@ -1,21 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metalinguagem</title>
+  
+    <link rel="stylesheet" href="styleGE.css">
     <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="drag.css">
     <!-- <script src="domtree.js" defer></script>
+
+    <link rel="stylesheet" href="click.css">
+
+    <script src="domtree.js" defer></script>
+
     <script src="getelements.js" defer></script>
     <script src="click.js" defer></script>
     <script src="keydown.js" defer></script> -->
     <script src="drag.js" defer></script>
+
     <!-- <script src="speedrun.js" defer></script> -->
 <!-- </head> -->
+
+    <script src="speedrun.js" defer></script>
+</head>
+<audio id="yupi">
+   <source src="audios/yippee.mp3" type="audio/mp3" />
+ </audio>
+<audio id="AAA">
+    <source src="audios/AAAA.mp3" type="audio/mp3"/>
+ </audio>
+ <audio id="erro">
+    <source src="audios/erro.mp3" type="audio/mp3"/>
+ </audio>
+
 <body>
     <header>
-
+        <h1 id="h1Header">
+            MiniGames
+        </h1>
+        <img id="JSimg" alt="JS" src="./Imagens/javascript.png">
     </header>
     <main>
         <article>
@@ -40,19 +65,102 @@
             </p>
         </article>
         <section id="getelements">
-
+            <p id="pergunta">Tente capturar os elementos que estão presentes na divlegal</p>
+            <div class="div-getelements1">
+<pre><code id="alternativa">document.getElementById(“<input type="text" name="teclado" id="campo-keyup" placeholder="" autocomplete="off" autocapitalize="off" title="Digite um id presente no html ao lado"/>“)</code></pre>
+<pre><code id="alternativa">document.getElementsByName(“<input type="text" name="teclado" id="campo-keyup" placeholder="" autocomplete="off" autocapitalize="off" title="Digite um nome presente no html ao lado"/>“)</code></pre>  
+<pre><code id="alternativa">document.getElementsByClassName(“<input type="text" name="teclado" id="campo-keyup3" placeholder="" autocomplete="off" autocapitalize="off" title="Digite uma classe presente no html ao lado"/>“)[0]</code></pre>
+            </div>
+            <div class="div-getelements2">
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Testes&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../css/localstorage.css"&gt;
+&lt;/head&gt;<span class="span2 ">
+&lt;body id="body"&gt;<span class="span1 ">
+    &lt;div id="divlegal"&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+    &lt;/div&gt;</span>
+        <span class="span3 ">&lt;div class="divmuitolegal"&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor temporibus repellendus eveniet veritatis. Quos eius eos magnam alias. Blanditiis ipsa sunt quos quisquam accusantium tempore vitae impedit ex exercitationem quia.&lt;/p&gt;
+        &lt;/div&gt;</span>
+&lt;/body&gt;</span>
+&lt;/html&gt;</code></pre>
+        </div>
         </section>
         <article>
+            <h3>getElementById()</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis magnam nisi aliquid numquam voluptatibus cupiditate, fuga, placeat perferendis est dolores sit nihil adipisci accusantium voluptatem ut temporibus dicta dolorem ad.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis magnam nisi aliquid numquam voluptatibus cupiditate, fuga, placeat perferendis est dolores sit nihil adipisci accusantium voluptatem ut temporibus dicta dolorem ad.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis magnam nisi aliquid numquam voluptatibus cupiditate, fuga, placeat perferendis est dolores sit nihil adipisci accusantium voluptatem ut temporibus dicta dolorem ad.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis magnam nisi aliquid numquam voluptatibus cupiditate, fuga, placeat perferendis est dolores sit nihil adipisci accusantium voluptatem ut temporibus dicta dolorem ad.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis magnam nisi aliquid numquam voluptatibus cupiditate, fuga, placeat perferendis est dolores sit nihil adipisci accusantium voluptatem ut temporibus dicta dolorem ad.
+                O método getElementById() retorna um elemento com um valor especificado.
+                O método getElementById() retornará null se o elemento não existir.
+                O método getElementById() é um dos métodos mais comuns no DOM HTML. Ele é usado quase toda vez que você deseja ler ou editar um elemento HTML.
+                Qualquer id deve ser exclusivo, mas:
+                Se existirem dois ou mais elementos com o mesmo id, getElementById() retornará o primeiro.
             </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.getElementById(elementID)</code></pre>
+            <h3>getElementsByClassName()</h3>
+            <p>
+                O método getElementsByClassName() retorna uma coleção de elementos com um nome de classe especificado(s).
+                O método getElementsByClassName() retorna um HTMLCollection.
+            </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.getElementsByClassName(classname)</code></pre>
+            <h3>getElementsByName()</h3>
+            <p>
+                O método getElementsByName() retorna uma coleção de elementos com um nome especificado.
+                O método getElementsByName() retorna um NodeList ativo.
+            </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.getElementsByName(name)</code></pre>
+            <h3>getElementsByTagName()</h3>
+            <p>
+                O método getElementsByTagName() retorna uma coleção de todos os elementos com um nome de marca especificado.
+                O método getElementsByTagName() retorna um HTMLCollection.
+                A propriedade getElementsByTagName() é somente leitura.
+                getElementsByTagName("*") retorna todos os elementos no documento.
+            </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.getElementsByTagName(tagname)</code></pre>
+            <h3>querySelector()</h3>
+            <p>
+                O método querySelector() retorna o primeiro elemento que corresponde a um seletor CSS.
+
+                Para retornar todas as correspondências (não apenas a primeira), use querySelectorAll().
+                
+                Tanto querySelector() quanto querySelectorAll() lançam uma exceção SYNTAX_ERR se o(s) seletor(es) for(em) inválido(s).
+            </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.querySelector(CSS selectors)</code></pre>
+            <h3>querySelectorAll()</h3>
+            <p>
+                O método querySelectorAll() retorna todos os elementos que correspondem a um seletor CSS.
+                O método querySelectorAll() retorna um NodeList.     
+                O método querySelectorAll() lança uma exceção SYNTAX_ERR se o(s) seletor(es) for(em) inválido(s)
+            </p>
+            <h4>Sintaxe:</h4>
+            <pre class="sintaxe"><code>document.querySelectorAll(CSS selectors)</code></pre>
         </article>
         <section id="click">
-            
+            <P id="lepo">Clique nas Tags na ordem correta</P>
+                <pre>
+                    <div id="teste1">
+                    </div>
+                </pre>
+                <div id="opcoesgerais">
+                <div class="opcao" onclick="verificar('opcao1')" id="opcao1">Opção 1</div>
+                <div class="opcao" onclick="verificar('opcao2')" id="opcao2">Opção 2</div>
+                <div class="opcao" onclick="verificar('opcao3')" id="opcao3">Opção 3</div>
+                <div class="opcao" onclick="verificar('opcao4')" id="opcao4">Opção 4</div>
+                </div>
         </section>
         <article>
             <p>

@@ -1,0 +1,54 @@
+.div-getelements1{
+    float: left;
+    border-radius: 30px;
+    color: aliceblue;
+    display: inline-block;
+    pre{
+    code{
+    margin: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #2C2C2A;
+        }
+    }
+}
+.div-getelements2{
+    overflow: hidden;
+    width: 42%;
+    padding: 10px;
+    float: right;
+    position: relative;
+    background-color: #2C2C2A;
+    border-radius: 20px;
+    color: aliceblue;
+    display: inline-block;
+    bottom: 40px;
+}
+#campo-keyup{
+    background-color: #2C2C2A;
+    color: aliceblue;
+    width: 30%;
+}
+#campo-keyup3{
+    background-color: #2C2C2A;
+    color: aliceblue;
+    width: 30%;
+}
+.certa {
+background-color: green;
+}
+.errado {
+background-color: red;
+}
+.sintaxe{
+    border: aliceblue ;
+    background-color: #2C2C2A;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+#pergunta{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
