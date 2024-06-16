@@ -1,5 +1,9 @@
 body{
     background-color: rgb(255, 255, 145);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main{
@@ -7,6 +11,8 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     gap: 1vh;
+    width: 90vw;
+    margin: 10% 0;
 }
 
 section{
@@ -19,9 +25,9 @@ section{
 }
 
 article {
-    width: 100vw;
+    width: 90%;
     box-sizing: border-box;
-    padding: 5% 7.5%;
+    padding: 2.5% 5%;
 }
 
 body{
@@ -33,7 +39,6 @@ h1,h2{
     }
 p,li{
     font-size: 0.875rem; 
-    line-height:1.5714285 ;}
 
 a{
     text-decoration: none;

@@ -7,13 +7,22 @@
   
     <link rel="stylesheet" href="styleGE.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="drag.css">
+    <!-- <script src="domtree.js" defer></script>
+
     <link rel="stylesheet" href="click.css">
 
     <script src="domtree.js" defer></script>
+
     <script src="getelements.js" defer></script>
     <script src="click.js" defer></script>
-    <script src="keydown.js" defer></script>
+    <script src="keydown.js" defer></script> -->
     <script src="drag.js" defer></script>
+
+    <!-- <script src="speedrun.js" defer></script> -->
+<!-- </head> -->
+
     <script src="speedrun.js" defer></script>
 </head>
 <audio id="yupi">
@@ -25,6 +34,7 @@
  <audio id="erro">
     <source src="audios/erro.mp3" type="audio/mp3"/>
  </audio>
+
 <body>
     <header>
         <h1 id="h1Header">
@@ -165,17 +175,24 @@
 
         </section>
         <article>
+            <h2>Drag</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut optio minus suscipit fuga. Quae quo distinctio reprehenderit id soluta, doloribus officia. Minima, hic. Labore adipisci cupiditate dicta in animi doloremque.
+                O evento de "drag" em JavaScript permite que elementos HTML sejam arrastados pelo usuário em uma página web. Ele é parte da API de arrastar e soltar (Drag and Drop API), que facilita a interação do usuário com elementos na interface. Quando um elemento é arrastado, o navegador dispara uma série de eventos que podem ser capturados para realizar ações específicas, como atualizar a posição do elemento ou executar alguma lógica de aplicação.
+            </p>
+            <p>Para usar o evento de drag, geralmente você precisa lidar com três eventos principais:</p>
+            <ul>
+                <li>dragstart: Este evento é acionado quando o usuário começa a arrastar um elemento. Aqui, você pode definir o que deve acontecer quando o arraste começa, como configurar dados associados ao arraste (usando setData) e estilizar o elemento durante o arraste.</li>
+                <li>drag: Durante o arraste, o evento drag é disparado continuamente. Você pode usar isso para atualizar a posição do elemento ou realizar outras ações conforme o usuário move o elemento pela página.</li>
+                <li>dragend: Quando o usuário solta o elemento arrastado, o evento dragend é acionado. Aqui você pode limpar quaisquer configurações ou realizar ações finais relacionadas ao arraste.</li>
+            </ul>
+            <p>
+                Esses eventos fornecem uma maneira poderosa de criar interações dinâmicas em suas aplicações web, permitindo que os usuários manipulem elementos de forma intuitiva através do arraste e soltar.
             </p>
         </article>
+        
         <section id="drag">
-
+            <h2>Ordene os blocos de código</h2>
+            
         </section>
         
     </main>
