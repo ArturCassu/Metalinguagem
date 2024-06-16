@@ -1,33 +1,46 @@
-.dragbox {
+.code-line {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
     background-color: rgb(45, 45, 45);
-    border-radius: 5px;
-    height: 100%;
     box-sizing: border-box;
-    align-content: flex-start;
-}
-
-.code-block {
+    align-items: flex-start;
+  }
+  
+  .dragbox {
+    display: contents;
+  }
+  
+  .code-block {
     background-color: white;
     padding: 5px;
     border-radius: 5px;
     height: fit-content;
+    width: fit-content;
     user-select: none;
-}
-
-.dragging {
+    font-weight: bolder;
+  }
+  
+  .dragging {
     opacity: 0.5;
-}
-
-#cursor {
-    background-color: white;
-    color: white;
-    height: fit-content;
-    width: 4px;
-    padding: 5px 0;
-    user-select: none;
-    margin: 0 -7px;
-}
+  }
+  
+  .correct {
+    background-color: green;
+  }
+  
+  .placeholder {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  #drag h2 {
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #drag{
+    padding-top: 5%;
+  }
