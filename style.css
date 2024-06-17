@@ -30,6 +30,9 @@ article {
     padding: 2.5% 5%;
 }
 
+body{font-family: sans-serif;margin: 15%;}
+h1,h2,h3{font-family: 'Linux Libertine','Georgia','Times','Source Serif Pro',serif; font-weight: normal;}
+p,li{font-size: 0.875rem; line-height:1.5714285 ;}
 body{
     font-family: sans-serif;
 }
