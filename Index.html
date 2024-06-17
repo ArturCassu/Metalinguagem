@@ -181,13 +181,24 @@ meuBotao.addEventListener('click', function() {
         </section>
 
         <article>
+            <h2>Teclado</h2>
+            <h4>keyup</h4>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi autem sint laudantium accusamus dignissimos alias nihil assumenda reiciendis architecto in eveniet odio veritatis, magnam nam rerum exercitationem aliquid soluta beatae.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi autem sint laudantium accusamus dignissimos alias nihil assumenda reiciendis architecto in eveniet odio veritatis, magnam nam rerum exercitationem aliquid soluta beatae.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi autem sint laudantium accusamus dignissimos alias nihil assumenda reiciendis architecto in eveniet odio veritatis, magnam nam rerum exercitationem aliquid soluta beatae.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi autem sint laudantium accusamus dignissimos alias nihil assumenda reiciendis architecto in eveniet odio veritatis, magnam nam rerum exercitationem aliquid soluta beatae.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi autem sint laudantium accusamus dignissimos alias nihil assumenda reiciendis architecto in eveniet odio veritatis, magnam nam rerum exercitationem aliquid soluta beatae.
+                O evento <strong>keyup</strong> no JavaScript é disparado quando uma tecla do teclado é liberada após ser pressionada. Esse evento é muito útil em interações de usuário onde é necessário detectar quando o usuário termina de digitar uma tecla, como em formulários de busca ou validação de entrada de dados em tempo real.
             </p>
+            <h4>exemplo:</h4>
+            <p>
+                <strong>input.addEventListener('keyup', verificarInput);</strong> nesse caso, o evento <strong>keyup</strong> será disparado quando o usuário pressionar uma tecla. E isso ira ativar um método que eu criei para verificar se o que o usúario colocou foi digitado corretamente.
+            </p>
+                </article>
+                    <section id="texto">
+                        <div id="textoInicial">CLIQUE AQUI</div>
+                        <div id="frases"></div>
+                        <div id="progress"></div>
+                        <input type="text" id="input" class="invisivel" autocomplete="off" 
+                        autocapitalize="off">
+                    </section>
+                <article>
         </article>
         <section id="keydown">
 
@@ -216,6 +227,7 @@ meuBotao.addEventListener('click', function() {
             
         </section>
         
+
     </main>
     <footer>
 
