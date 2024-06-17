@@ -56,8 +56,8 @@ header{
     width: 5%;
 }
 #h1Header{
-    padding-left: 550px;
-    padding-right: 440px;
+    padding-left: 40%;
+    padding-right: 20%;
 }
 
 article pre{
@@ -69,8 +69,14 @@ article pre{
 }
 
 main>h2{
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .textoClique strong{
     color: blue;
+}
+
+#nao{
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
 }

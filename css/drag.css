@@ -44,3 +44,7 @@
   #drag{
     padding-top: 5%;
   }
+  #drag p {
+    font-weight: 400;
+    font-size: medium;
+  }

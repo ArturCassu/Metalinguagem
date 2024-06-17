@@ -24,3 +24,6 @@ a{
     text-decoration: none;
     box-sizing: border-box;
 }
+p{
+    text-align: center;
+}
