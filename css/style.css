@@ -16,7 +16,6 @@ main{
 }
 
 section{
-    height: 80vh;
     width: 80vw;
     padding: 6%;
     box-sizing: border-box;
@@ -30,13 +29,16 @@ article {
     padding: 2.5% 5%;
 }
 
+body{
+    font-family: sans-serif;
+}
 h1,h2{
     font-family: 'Linux Libertine','Georgia','Times','Source Serif Pro',serif;
     font-weight: normal;
     }
 p,li{
     font-size: 1rem;
-    line-height: 1.478976px;
+    line-height: 1.478976rem;
 }
 a{
     text-decoration: none;
@@ -56,4 +58,16 @@ header{
 #h1Header{
     padding-left: 550px;
     padding-right: 440px;
+}
+
+article pre{
+    border: aliceblue;
+    background-color: #2C2C2A;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+
+main>h2{
+    margin-top: 20%;
 }
