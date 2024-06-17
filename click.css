@@ -1,0 +1,79 @@
+
+
+#click{
+   
+  
+}
+#opcoesgerais{
+    text-align: center;
+}
+section#click{
+        margin: 0;  /* Remove a margem do <article> */
+        padding: 0;  /* Remove o padding do <article> */
+        
+       
+}
+section p{
+    margin: 0;  /* Remove a margem do <article> */
+    padding: 0;  /* Remove o padding do <article> */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#teste1{
+    background-color: black;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0px 48px;
+}
+#lepo{
+    margin-top: 15px;
+   
+}
+
+
+.cor{
+    color: white;
+}
+.ganhou{
+    color: greenyellow;
+}
+.perdeu{
+    color: crimson;
+}
+.opcao {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    width: fit-content;
+    user-select: none;
+    
+}
+
+.opcao:hover {
+    background-color: darkgray;
+}
+
+.reiniciar {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reiniciar:hover {
+    background-color: darkred;
+}
