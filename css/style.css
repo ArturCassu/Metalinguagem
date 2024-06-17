@@ -71,3 +71,6 @@ article pre{
 main>h2{
     margin-top: 20%;
 }
+.textoClique strong{
+    color: blue;
+}
