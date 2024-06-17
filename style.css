@@ -39,7 +39,7 @@ h1,h2{
     }
 p,li{
     font-size: 0.875rem; 
-
+}
 a{
     text-decoration: none;
 }
@@ -58,4 +58,8 @@ header{
 #h1Header{
     padding-left: 550px;
     padding-right: 440px;
+}
+
+.textoClique strong{
+    color: blue;
 }
