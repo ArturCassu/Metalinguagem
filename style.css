@@ -62,3 +62,7 @@ header{
     padding-left: 550px;
     padding-right: 440px;
 }
+
+.textoClique strong{
+    color: blue;
+}

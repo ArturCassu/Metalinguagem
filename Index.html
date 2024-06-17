@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="stylekeydown.css">
 
     <link rel="stylesheet" href="drag.css">
-    <!-- <script src="domtree.js" defer></script>
+    <script src="domtree.js" defer></script>
 
     <link rel="stylesheet" href="click.css">
 
@@ -18,7 +18,7 @@
 
     <script src="getelements.js" defer></script>
     <script src="click.js" defer></script>
-    <script src="keydown.js" defer></script> -->
+    <script src="keydown.js" defer></script>
     <script src="drag.js" defer></script>
 
     <!-- <script src="speedrun.js" defer></script> -->
@@ -164,24 +164,35 @@
                 </div>
         </section>
         <article>
-            <h2>Teclado</h2>
-            <h4>keyup</h4>
-            <p>
-                O evento <strong>keyup</strong> no JavaScript é disparado quando uma tecla do teclado é liberada após ser pressionada. Esse evento é muito útil em interações de usuário onde é necessário detectar quando o usuário termina de digitar uma tecla, como em formulários de busca ou validação de entrada de dados em tempo real.
+            <p class="textoClique">
+               <strong> Estrutura Básica de um Documento HTML
+Quando criamos um arquivo HTML, ele geralmente inclui as seguintes seções:</strong>
+<br><br>
+
+<strong>&lt;!DOCTYPE html&gt;</strong>
+<br>
+
+Esta linha, chamada de declaração do tipo de documento (DOCTYPE), indica ao navegador que estamos usando HTML5, a versão mais recente do HTML. Isso ajuda o navegador a renderizar a página de maneira correta e consistente.
+<br><br>
+<strong >&lt;html&gt;</strong>:
+A tag <strong >&lt;html&gt;</strong> é a raiz de um documento HTML. Ela envolve todo o conteúdo da página e define o início e o fim do documento HTML.
+<br><br>
+
+<strong>&lt;head&gt;</strong>:
+A seção <strong>&lt;head&gt;</strong> contém metadados sobre o documento HTML. Esses dados não são exibidos diretamente na página web, mas são essenciais para o funcionamento correto da página. Dentro do <strong>&lt;head&gt;</strong>, podemos encontrar:
+<br><br>
+<strong>&lt;title&gt;</strong>: Define o título da página, que aparece na aba do navegador. <br><br>
+<strong>&lt;meta&gt;</strong>: Utilizada para definir metadados como a codificação de caracteres (&lt;meta charset="UTF-8"&gt;), descrições, palavras-chave, entre outros. <br><br>
+<strong>&lt;link&gt;</strong>: Utilizada para vincular folhas de estilo CSS externas. <br><br>
+<strong>&lt;style&gt;</strong>: Contém estilos CSS que podem ser aplicados diretamente na página. <br><br>
+<strong>&lt;script&gt;</strong>: Pode conter ou referenciar scripts JavaScript que devem ser carregados antes do corpo da página. <br> <br>
+
+<strong>&lt;body&gt;</strong>:
+
+A seção <strong>&lt;body&gt;</strong> contém todo o conteúdo visível da página web, como textos, imagens, vídeos, links e outros elementos. Tudo o que será exibido no navegador está dentro da tag <strong>&lt;body&gt;</strong>.
             </p>
-            <h4>exemplo:</h4>
-            <p>
-                <strong>input.addEventListener('keyup', verificarInput);</strong> nesse caso, o evento <strong>keyup</strong> será disparado quando o usuário pressionar uma tecla. E isso ira ativar um método que eu criei para verificar se o que o usúario colocou foi digitado corretamente.
-            </p>
-                </article>
-                    <section id="texto">
-                        <div id="textoInicial">CLIQUE AQUI</div>
-                        <div id="frases"></div>
-                        <div id="progress"></div>
-                        <input type="text" id="input" class="invisivel" autocomplete="off" 
-                        autocapitalize="off">
-                    </section>
-                <article>
+
+
         </article>
         <section id="keydown">
 
