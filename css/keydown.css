@@ -1,0 +1,25 @@
+#texto{
+  text-align: center;
+}
+
+#input{
+  width: 30%;
+  margin-top: 3%;
+  border: 1.25px solid black;
+  border-radius: 5px;
+
+}
+
+#frases{
+  border: aliceblue;
+  background-color: #2C2C2A;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  font-family: monospace;
+}
+
+.invisivel{
+  display: none;
+}
+

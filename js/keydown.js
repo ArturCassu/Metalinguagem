@@ -30,6 +30,7 @@ section.addEventListener('click', aparecerUmaVez);
 function comecarJogo() {
     if(!boolean){
     indiceFrase = 0;
+    elementoFrases.classList.remove("invisivel")
     carregarProximaFrase();
     input.value = '';
     input.focus();

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalinguagem</title>
+  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/keydown.css">
+    <script src="js/keydown.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            Metalinguagem
+        </h1>
+        <a href="index.html"><img alt="JS" src="./Imagens/javascript.png"></a>
+    </header>
+    <main>
+
+        <h2>O que você digita</h2>
+        <article>
+            <h4>keyup</h4>
+            <p>
+                O evento <strong>keyup</strong> no JavaScript é disparado quando uma tecla do teclado é liberada após ser pressionada. Esse evento é muito útil em interações de usuário onde é necessário detectar quando o usuário termina de digitar uma tecla, como em formulários de busca ou validação de entrada de dados em tempo real.
+            </p>
+            <h4>exemplo:</h4>
+            <p>
+                <strong>input.addEventListener('keyup', verificarInput);</strong> nesse caso, o evento <strong>keyup</strong> será disparado quando o usuário pressionar uma tecla. E isso ira ativar um método que eu criei para verificar se o que o usúario colocou foi digitado corretamente.
+            </p> 
+        </article>
+        <section id="texto">
+            <div id="textoInicial">CLIQUE AQUI</div>
+            <div id="frases" class="invisivel"></div>
+            <div id="progress"></div>
+            <input type="text" id="input" class="invisivel" autocomplete="off" 
+            autocapitalize="off">
+        </section>
+            
+    </main>
+    <footer>
+        <a href="click.html"><div class="ante"><</div></a>
+        <a href="getelements.html"><h3>Get Elements</h3></a>
+        <a href="click.html"><h3>Click</h3></a>
+        <h3>KeyDown</h3>
+        <a href="drag.html"><h3>Drag</h3></a>
+        <a href="drag.html"><div class="prox">></div></a>
+    </footer>
+</body>
+</html>

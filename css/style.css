@@ -1,63 +1,27 @@
 body{
-    background-color: rgb(255, 255, 145);
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: rgb(120, 125, 255);
 }
-
 main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1vh;
-    width: 90vw;
-    margin: 10% 0;
-}
-
-section{
-    width: 80vw;
-    padding: 6%;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 69);
-    border-radius: 30px;
-}
-
-article {
-    width: 90%;
-    box-sizing: border-box;
-    padding: 2.5% 5%;
-}
-
-body{
-    font-family: sans-serif;
-}
-h1,h2{
-    font-family: 'Linux Libertine','Georgia','Times','Source Serif Pro',serif;
-    font-weight: normal;
-    }
-p,li{
-    font-size: 1rem;
-    line-height: 1.478976rem;
-}
-a{
-    text-decoration: none;
-}
-
-header{
-    display: flex;
-    align-items: center;
-    position: sticky;
-    background-color: #F7DF1E;
     width: 100%;
+    padding: 4% 20% ;
+    box-sizing: border-box;
 }
 
-#JSimg{
-    width: 5%;
+h1,h2,h3,h4{
+    font-family: cursive;
+    font-weight: normal;
+    font-size: 1.5rem;
 }
-#h1Header{
-    padding-left: 40%;
-    padding-right: 20%;
+
+p,li{
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.778976rem;
 }
 
 article pre{
@@ -68,15 +32,59 @@ article pre{
     padding: 10px 10px 10px 10px;
 }
 
-main>h2{
-    margin-top: 10%;
-}
-.textoClique strong{
-    color: blue;
+section{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10% 5%;
+    border-radius: 20px;
+    background-color: rgb(247,223,30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 10px 20px rgb(21, 21, 21) ;
 }
 
-#nao{
-    margin-top: 0;
-    width: 100%;
-    text-align: center;
+header h1{
+    display: inline;
+    font-family: cursive;
+    font-size: 40px;
+    margin: 0;
 }
+header{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 1%;
+    padding: 3%;
+    background-color: rgb(247,223,30);
+    box-shadow: 0 5px black;
+}
+header a{
+    position: absolute;
+    left: 2%;
+    width: 6%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: cursive;
+}
+
+footer h3{
+    color: rgb(247,223,30);
+}
+
+footer a h3{
+    color: black;
+}
+footer a {
+    text-decoration: none;
+}
+
+footer div{
+    font-size: 2rem;
+}
+

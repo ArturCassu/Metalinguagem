@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalinguagem</title>
+  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/click.css">
+    <script src="js/click.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            Metalinguagem
+        </h1>
+        <a href="index.html"><img alt="JS" src="./Imagens/javascript.png"></a>
+    </header>
+    <main>
+        
+        <h2>Clicks na sua página</h2>
+        <article>
+        <p>Em JavaScript, o evento de click é um dos eventos mais comuns usados para detectar e responder a cliques do usuário em elementos HTML. Existem diferentes maneiras de adicionar manipuladores de eventos de click aos elementos, e aqui estão as principais abordagens:</p>
+        <h3>Adicionando diretamente no HTML:</h3>
+        <p>Você pode adicionar um manipulador de eventos diretamente no atributo HTML do elemento usando onclick. Este método é simples, mas pode dificultar a manutenção do código.</p>
+        <p>Exemplo: &lt;button onclick="minhaFuncao()"&gt;Clique aqui&lt;/button&gt;</p>
+        <h3>Usando a propriedade onclick no JavaScript:</h3>
+        
+        <p>Você pode definir a propriedade onclick de um elemento para uma função JavaScript. Isto substitui qualquer manipulador de eventos onclick previamente definido.</p>
+        <p>Exemplo: document.getElementById('meuBotao').onclick = function() { minhaFuncao(); }</p>
+        <h3>Usando addEventListener:</h3>
+        
+        <p>Este é o método mais recomendado, pois permite adicionar múltiplos manipuladores de eventos ao mesmo elemento sem substituir os anteriores. Ele também oferece mais controle sobre o evento.</p>
+        <p>Exemplo: document.getElementById('meuBotao').addEventListener('click', minhaFuncao);</p>
+        <h3>Comparação</h3>
+        <p>
+            Diretamente no HTML: Fácil de usar, mas difícil de manter em projetos maiores. Não é uma prática recomendada para código modular e reutilizável.
+        </p>
+            <p>Propriedade onclick: Simples e direto, mas limita a um único manipulador de eventos por elemento.</p>
+        <p>addEventListener: Mais flexível e robusto, permitindo múltiplos manipuladores de eventos e oferecendo melhor controle sobre os eventos.</p>
+        
+        <h3>Exemplo de Uso</h3>
+        <h4>HTML:</h4> 
+        <code>
+            <pre>&lt;button onclick="alert('Botão clicado!')"&gt;Clique aqui&lt;/button&gt;</pre>
+        </code>
+        <h4>Propriedade onclick:</h4>
+        <code>
+            <pre>
+const meuBotao = document.getElementById('meuBotao');
+meuBotao.onclick = function() {
+    alert('Botão clicado!');
+};
+            </pre>
+        </code>
+        <h4>addEventListener:</h4>
+        <code>
+            <pre>
+const meuBotao = document.getElementById('meuBotao');
+meuBotao.addEventListener('click', function() {
+    alert('Botão clicado!');
+});
+            </pre>
+        </code>
+        </article>
+        <section id="click">
+            <P id="lepo">Clique nas Tags na ordem correta <br> para formar um corpo html que possa ter funcionalidades</P>
+                <pre>
+                    <div id="teste1">
+                    </div>
+                </pre>
+                <div id="opcoesgerais">
+                <div class="opcao" onclick="verificar('opcao1')" id="opcao1">Opção 1</div>
+                <div class="opcao" onclick="verificar('opcao2')" id="opcao2">Opção 2</div>
+                <div class="opcao" onclick="verificar('opcao3')" id="opcao3">Opção 3</div>
+                <div class="opcao" onclick="verificar('opcao4')" id="opcao4">Opção 4</div>
+                </div>
+        </section>
+        
+        </main>
+    <footer>
+        <a href="getelements.html"><div class="ante"><</div></a>
+        <a href="getelements.html"><h3>Get Elements</h3></a>
+        <h3>Click</h3>
+        <a href="keydown.html"><h3>KeyPressed</h3></a>
+        <a href="drag.html"><h3>Drag</h3></a>
+        <a href="keydown.html"><div class="prox">></div></a>
+    </footer>
+</body>
+</html>

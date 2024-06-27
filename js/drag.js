@@ -163,7 +163,8 @@ function mudarfase(){
   const el_instrucoes = document.querySelector("#instrucoes") 
 
   populateBox(fases[fase_atual])
-
+  el_instrucoes.innerText = instrucoes[fase_atual]
+  
   // bt_ant.addEventListener("click", ()=>{
   //   if (!bt_ant.classList.contains("bloqueado")) {
   //     fase_atual -=1

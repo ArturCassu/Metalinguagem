@@ -1,29 +1,43 @@
 body{
     height: 97vh;
-    padding: 0 20%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     box-sizing: content-box;
-    background-color: rgb(255, 255, 69);
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(120, 125, 255);
+    font-family: cursive;
 }
 
 h2{
-    padding: 3% 5%;
-    background-color: black;
-    border-radius: 20px;
-    }
-h2:hover{
-    background-color: rgb(49, 49, 49);
+    color: white;
 }
 
+
 a{
-    color: white;
+    background-color: rgb(69, 69, 69);
     text-decoration: none;
     box-sizing: border-box;
+    user-select: none;
+    padding: 3% 5%;
+    border-radius: 20px;
 }
+a:hover{
+    background-color: rgb(247,223,30); 
+}
+a:hover h2{
+    color: black;
+}
+
+
+
 p{
     text-align: center;
+    font-size: 1.7rem;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
 }

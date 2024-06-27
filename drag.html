@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalinguagem</title>
+  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/drag.css">
+    <script src="js/drag.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            Metalinguagem
+        </h1>
+        <a href="index.html"><img alt="JS" src="./Imagens/javascript.png"></a>
+    </header>
+    <main>
+
+        <h2>Arrastando as coisas por aí</h2>
+        <article>
+            <p>
+                O evento de "drag" em JavaScript permite que elementos HTML sejam arrastados pelo usuário em uma página web. Ele é parte da API de arrastar e soltar (Drag and Drop API), que facilita a interação do usuário com elementos na interface. Quando um elemento é arrastado, o navegador dispara uma série de eventos que podem ser capturados para realizar ações específicas, como atualizar a posição do elemento ou executar alguma lógica de aplicação.
+            </p>
+            <p>Para usar o evento de drag, geralmente você precisa lidar com três eventos principais:</p>
+            <ul>
+                <li>dragstart: Este evento é acionado quando o usuário começa a arrastar um elemento. Aqui, você pode definir o que deve acontecer quando o arraste começa, como configurar dados associados ao arraste (usando setData) e estilizar o elemento durante o arraste.</li>
+                <li>drag: Durante o arraste, o evento drag é disparado continuamente. Você pode usar isso para atualizar a posição do elemento ou realizar outras ações conforme o usuário move o elemento pela página.</li>
+                <li>dragend: Quando o usuário solta o elemento arrastado, o evento dragend é acionado. Aqui você pode limpar quaisquer configurações ou realizar ações finais relacionadas ao arraste.</li>
+            </ul>
+            <p>
+                Esses eventos fornecem uma maneira poderosa de criar interações dinâmicas em suas aplicações web, permitindo que os usuários manipulem elementos de forma intuitiva através do arraste e soltar.
+            </p>
+        </article>
+        <section id="drag">
+            <h2>Ordene os blocos de código:</h2>
+            <p id="instrucoes"></p>
+            <!-- <div class="btn_alterar_exercicio anterior bloqueado"><</div> -->
+            <div class="btn_alterar_exercicio proximo bloqueado">></div>
+            
+        </section>
+        
+    </main>
+    <footer>
+        <a href="keydown.html"><div class="ante"><</div></a>
+        <a href="getelements.html"><h3>Get Elements</h3></a>
+        <a href="click.html"><h3>Click</h3></a>
+        <a href="keydown.html"><h3>KeyDown</h3></a>
+        <h3>Drag</h3>
+        <div class="prox">></div>
+    </footer>
+</body>
+</html>
