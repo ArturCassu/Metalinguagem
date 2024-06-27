@@ -13,6 +13,7 @@
   }
   
   .code-block {
+    font-family: monospace;
     background-color: white;
     padding: 5px;
     border-radius: 5px;
@@ -43,8 +44,44 @@
   }
   #drag{
     padding-top: 5%;
+    position: relative;
   }
   #drag p {
     font-weight: 400;
     font-size: medium;
+  }
+
+  .checked{
+    background-color: green;
+  }
+
+
+  .btn_alterar_exercicio{
+    position: absolute;
+    font-size: 60px;
+    font-weight: bolder;
+    top: 43%;
+    cursor: pointer;
+    user-select: none;
+    right: 2%;
+  }
+
+  /* .anterior{
+    left: 2%;
+  } */
+  /* .proximo{
+    right: 2%;
+  } */
+
+  .bloqueado{
+    color: rgb(72, 72, 72);
+    cursor: not-allowed;
+  }
+
+  .invisivel{
+    display: none;
+  }
+
+  .vitoria h3{
+    text-align: center;
   }

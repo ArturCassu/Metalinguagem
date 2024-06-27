@@ -1,0 +1,36 @@
+containers = document.querySelectorAll(".containers");
+
+document.addEventListener("dragstart", (e) => {
+  e.target.classList.add("dragging");
+});
+
+document.addEventListener("dragend", (e) => {
+  e.target.classList.remove("dragging");
+});
+
+containers.forEach((linha) => {
+    linha.addEventListener("dragover", (e) => {
+        moverItem(linha,e.clientX)
+    }); 
+});
+
+function moverItem(linha, posicaoX){
+    const dragging = document.querySelector(".dragging");
+    const applyAfter = getNewPosition(linha, posicaoX);
+    if (applyAfter) {
+        applyAfter.insertAdjacentElement("afterend", dragging);
+    } else {
+        linha.prepend(dragging);
+    }
+}
+
+function getNewPosition(column, posX) {
+  const cards = column.querySelectorAll(".item:not(.dragging)");
+  let result;
+  for (let refer_card of cards) {
+    const box = refer_card.getBoundingClientRect();
+    const boxCenterX = box.x + box.width / 2;
+    if (posX >= boxCenterX) result = refer_card;
+  }
+  return result;
+}
