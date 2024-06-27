@@ -22,7 +22,8 @@
     border-radius: 20px;
     color: aliceblue;
     display: inline-block;
-    bottom: 40px;
+    top: 20px;
+    right: 15px;
 }
 #campo-keyup{
     background-color: #2C2C2A;
