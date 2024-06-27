@@ -97,7 +97,7 @@ let contadorBotao=0;
             if(errou==0){
                 
                 contador=1
-                window.alert("certo")
+                
                 teste1.textContent += conteudos[contadorOpIn];
                 contadorOpIn++
                 atualizarOpcoes()
@@ -139,7 +139,7 @@ let contadorBotao=0;
             console.log(errou)
             if(errou==0){
                 contador=1
-                window.alert("certo")
+                
                 teste1.textContent = conteudos[contadorOpIn];
                 contadorOpIn++
                 atualizarOpcoes()
@@ -212,7 +212,7 @@ let contadorBotao=0;
         } else if (opcao === 'opcao3') {
             if(errou==0){
                 contador=3
-                window.alert("certo")
+                
                 teste1.textContent = conteudos[contadorOpIn];
                 contadorOpIn++
                 atualizarOpcoes()
@@ -234,7 +234,7 @@ let contadorBotao=0;
         if (opcao === 'opcao1') {
             if(errou==0){
                 contador=1
-                window.alert("certo")
+                
                 teste1.textContent = conteudos[contadorOpIn];
                 contadorOpIn++
                 atualizarOpcoes()
@@ -279,7 +279,6 @@ let contadorBotao=0;
         if (opcao === 'opcao1') {
             if(errou==0){
                 contador=1
-                window.alert("certo")
                 teste1.textContent = conteudos[contadorOpIn];
                 contadorOpIn++
                 //===========================================================
@@ -292,6 +291,46 @@ let contadorBotao=0;
                 opcao3.textContent="Você"
                 opcao4.textContent="ganhou!"
                 finalizado=1
+                const informacao = document.createElement("article");
+                informacao.innerHTML=`
+                <h1> Como foi feito o jogo: </h1>
+                <h3>Usando addEventListener:</h3>
+                <p>Este é o método mais recomendado, pois permite adicionar múltiplos manipuladores de eventos ao mesmo elemento sem substituir os anteriores. Ele também oferece mais controle sobre o evento.</p>
+                <p>Exemplo: document.getElementById('botaoOpcao').addEventListener('click', minhaFuncao);</p>
+                
+                <pre>
+                const botaoOpcao = document.getElementById('botaoOpcao');
+                botaoOpcao.addEventListener('click', function() {
+                    alert('Botão clicado!');
+                    alert("aqui dentro, você coloca o código")
+                });
+                </pre>
+                
+                <h2>O botão de reiniciar</h2>
+                o botao de reiniciar foi feito sendo uma função,sendo chamada quando o usúario errasse, como:
+                <pre> 
+                function exibirBotaoReiniciar() {
+                    contadorBotao++
+                    if(contadorBotao==1){
+                    const botaoReiniciar = document.createElement("button");
+                    botaoReiniciar.textContent = "Reiniciar";
+                    botaoReiniciar.classList.add("reiniciar");
+                    blocao.appendChild(botaoReiniciar);
+                }
+                </pre>
+                <h2>Erros e acertos </h2>
+                ao errar, dava um toggle em uma classe que deixava vermelho, e ao finalizar, uma que deixava verde
+                <br>
+                <h2>E os conteúdos? </h2>
+                foram feitos dentro de um array, e quando a pessoa acertava, passava pro proximo indice
+                <br>
+                <h2>E o que isso tudo quer dizer? </h2>
+                Isso quer dizer que, com o "básico", você já consegue montar um jogo interativo e interessante, espero que tenha gostado :)
+                `
+
+                
+                blocao.append(informacao)
+                
             }else{window.alert("Antes de continuar, recomece a lição")}
           
             
