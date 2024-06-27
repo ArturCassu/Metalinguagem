@@ -1,7 +1,9 @@
 const frases = [
-    "Daniel is the best professor não é segredo!",
-    "Joaquim was here",
-    "Digita mais rápido! Adianta vai!",
+    "let input = document.getElementById('input');",
+    "input.addEventListener('keyup', verificarInput);",
+    "if (textoDigitado === fraseAtual) {indiceFrase++;}",
+    "if (indiceFrase < frases.length-1) {carregarProximaFrase();}",
+    "else {carregarProximaFrase();}",
     "PARABENS VOCE TERMINOU!"
 ];
 
