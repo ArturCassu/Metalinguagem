@@ -1,44 +1,66 @@
-const initialString = `const draggableElement = document.getElementById('draggable');
-  draggableElement.addEventListener('dragstart', (event) => {
-    draggableElement.style.opacity='0.5'; 
-  });
-  draggableElement.addEventListener('dragend', () => {
-    draggableElement.style.opacity=1;
-  });`.trim();
+const fase1 = `const containers = document.querySelectorAll(".code-line");`
 
-const initialLines = initialString.split("\n").map(line => line.trim().split(" ").filter(block => block.trim() !== ""));
-const numberOfLines = initialLines.length;
+const fase2 = `document.addEventListener('dragstart',(e)=>{
+                  e.target.classList.add("dragging");
+              });`
 
-const dragSection = document.getElementById("drag");
+const fase3 = `document.addEventListener('dragend',(e)=>{
+                  e.target.classList.remove("dragging");
+              });`
 
-for (let i = 0; i < numberOfLines; i++) {
-  const codeLine = document.createElement("div");
-  codeLine.className = "code-line";
+const fase4 = `containers.forEach((linha)=>{
+    linha.addEventListener("dragover", (e) =>{
+      moverItem(linha,e.clientX)
+    });});`
 
-  const dragbox = document.createElement("div");
-  dragbox.className = "dragbox";
+const fase5 = `function moverItem(linha, posicaoX){
+    const dragging = document.querySelector(".dragging");
+      const applyAfter=getNewPosition(linha,posicaoX);
+      if(applyAfter){
+        applyAfter.insertAdjacentElement("afterend",dragging);
+      }else{
+        linha.prepend(dragging);
+      }}`
 
-  codeLine.appendChild(dragbox);
-  dragSection.appendChild(codeLine);
-}
+const fase6 = `function getNewPosition(column, posX) {
+  const cards=column.querySelectorAll(".item:not(.dragging)");
+  let result;
+  for (let refer_card of cards) {
+    const box=refer_card.getBoundingClientRect();
+    const boxCenterX=box.x+box.width/2;
+    if(posX>=boxCenterX)result=refer_card;
+  }
+  return result;
+}`
 
-const codeLines = document.querySelectorAll(".code-line");
-const dragboxes = document.querySelectorAll(".dragbox");
-const codeBlocks = [];
+const parabens = `<div class="vitoria"><h3>Exercícios concluído</h3><p>O <a href="./drag.txt" download="drag.txt">código</a> que você montou é o responsavel pelo arrastar dos blocos que você arrastou '-'</p></div>`
 
-initialLines.forEach((line, lineIndex) => {
-  line.forEach(blockText => {
-    const block = createBlock(blockText);
-    codeBlocks.push(block);
-  });
+const fases = [
+  fase1,
+  fase2,fase3,fase4,fase5,fase6, 
+  parabens
+]
+let fase
+
+const instrucoes = [
+  'Crie uma variável com todos os elementos com a classe "code-line"',
+  'Adicione a classe "dragging" aos elementos que estiverem sendo arrastados',
+  "Agora remova essa classe",
+  'Agora, para cada elemento em "containers" adicione o evento de dragover que chama uma função para mover o item sendo arrastado',
+  'Crie uma função para mover o item, inserindo adjacente ao elemento obtido na funcao "getNewPosition"',
+  'Crie uma função que, percorrendo todos itens que não estiverem sendo arrastados, retornara o item mais próximo"'
+]
+
+const box = document.querySelector("#drag");
+
+document.addEventListener("dragstart", (e) => {
+  e.target.classList.add("dragging");
 });
 
-shuffleArray(codeBlocks);
-
-let currentDragboxIndex = 0;
-codeBlocks.forEach(block => {
-  dragboxes[currentDragboxIndex].appendChild(block);
-  currentDragboxIndex = (currentDragboxIndex + 1) % dragboxes.length;
+document.addEventListener("dragend", (e) => {
+  e.target.classList.remove("dragging");
+  let codeLines = document.querySelectorAll(".code-line");
+  check(codeLines,fase)
 });
 
 function createBlock(text) {
@@ -49,117 +71,143 @@ function createBlock(text) {
   return block;
 }
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+function getNewPosition(column, posX) {
+  const cards = column.querySelectorAll(".code-block:not(.dragging)");
+  let result;
+  for (let refer_card of cards) {
+    const box = refer_card.getBoundingClientRect();
+    const boxCenterX = box.x + box.width / 2;
+    if (posX >= boxCenterX) result = refer_card;
   }
+  return result;
 }
 
-function getClosestLine(mouseX, mouseY) {
-  let closestLine = null;
-  let closestDistance = Infinity;
-  let closestElement = null;
-
-  for (let line of codeLines) {
-    const rect = line.getBoundingClientRect();
-    const lineX = rect.left + rect.width / 2;
-    const lineY = rect.top + rect.height / 2;
-
-    const distance = Math.hypot(lineX - mouseX, lineY - mouseY);
-
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestLine = line;
-    }
-
-    for (let element of line.querySelectorAll(".code-block")) {
-      const elementRect = element.getBoundingClientRect();
-      const elementX = elementRect.left + elementRect.width / 2;
-      const elementY = elementRect.top + elementRect.height / 2;
-
-      const elementDistance = Math.hypot(elementX - mouseX, elementY - mouseY);
-
-      if (elementDistance < closestDistance) {
-        closestDistance = elementDistance;
-        closestElement = element;
+function check(codeLines,fase){
+  let cont = 0
+  let quant = 0
+  for (let i = 0; i < codeLines.length; i++) {
+    quant += codeLines[i].children.length
+    for (let j = 0; j < codeLines[i].children.length; j++) {
+      const code = codeLines[i].children[j];
+      const text = fase[i][j]
+      console.log(text);
+      if(code.textContent == text){
+        code.classList.add("checked")
+        cont += 1
+      }else{
+        code.classList.remove("checked")
+        cont -= 1
       }
     }
   }
-
-  return { closestLine, closestElement };
-}
-
-for (let block of codeBlocks) {
-  block.addEventListener("dragstart", (e) => {
-    block.classList.add("dragging");
-  });
-  block.addEventListener("drag", (e) => {
-    let { closestLine, closestElement } = getClosestLine(e.clientX, e.clientY);
-    refElement = closestElement || closestLine.querySelector(".dragbox");
-    displayShadow(block, refElement);
-  });
-  block.addEventListener("dragend", (e) => {
-    block.classList.remove("dragging");
-    let { closestLine, closestElement } = getClosestLine(e.clientX, e.clientY);
-    refElement = closestElement || closestLine.querySelector(".dragbox");
-    dropElement(block, refElement);
-    check();
-  });
-}
-
-function displayShadow(element, refElement) {
-  if (refElement) {
-    const parent = refElement.parentNode;
-    const nextSibling = refElement.nextSibling;
-    if (nextSibling && nextSibling.classList.contains("code-block")) {
-      parent.insertBefore(element, nextSibling);
-    } else {
-      parent.appendChild(element);
-    }
+  console.log(cont, quant);
+  if (cont == quant){
+    bt_prox.classList.remove("bloqueado")
+  }else{
+    bt_prox.classList.add("bloqueado")
   }
 }
 
-function dropElement(element, refElement) {
-  if (refElement) {
-    const parent = refElement.parentNode;
-    const nextSibling = refElement.nextSibling;
-    if (nextSibling && nextSibling.classList.contains("code-block")) {
-      parent.insertBefore(element, nextSibling);
-    } else {
-      parent.appendChild(element);
-    }
+function populateBox(text){
+  let codeLines = document.querySelectorAll(".code-line");
+  codeLines.forEach((item)=>{
+    item.remove()
+  })
 
-    const line = parent.closest('.code-line');
-    const blocksInLine = Array.from(line.querySelectorAll(".code-block"));
-    if (blocksInLine.length === 1 && blocksInLine[0].classList.contains("placeholder")) {
-      blocksInLine[0].remove();
+  let list = text.split("\n").map((line)=>{return line.split(" ").filter((word)=>word!="")});
+  fase = text.split("\n").map((line)=>{return line.split(" ").filter((word)=>word!="")});
+
+  for (let i = 0; i < list.length; i++) {;
+    for (let j = 0; j < list[i].length; j++) {
+      const element = list[i][j];
+      const y = Math.floor(Math.random() * list.length)
+      const x = Math.floor(Math.random() * list[y].length)
+      const foo = list[y][x]
+      list[y][x] = element
+      list[i][j] = foo
     }
   }
-}
 
-function check() {
-  codeLines.forEach((codeLine, lineIndex) => {
-    const currentLineBlocks = Array.from(dragboxes[lineIndex].querySelectorAll(".code-block:not(.placeholder)"));
-    const expectedLine = initialLines[lineIndex];
+  for (let i = 0; i < list.length; i++) {
+    const line = document.createElement("div");
+    line.className = "code-line"
+    for (let j = 0; j < list[i].length; j++) {
+      const element = createBlock(list[i][j])
+      line.appendChild(element)
+    }
+    box.appendChild(line)
+  }
 
-    currentLineBlocks.forEach((block, blockIndex) => {
-      if (block.innerText === expectedLine[blockIndex]) {
-        block.classList.add("correct");
-      } else {
-        block.classList.remove("correct");
-      }
+  codeLines = document.querySelectorAll(".code-line");
+  codeLines.forEach((linha) => {
+    linha.addEventListener("dragover", (e) => {
+      moverItem(linha,e.clientX)
     });
-
-    const placeholders = dragboxes[lineIndex].querySelectorAll(".placeholder");
-    if (currentLineBlocks.length > 0) {
-      placeholders.forEach(placeholder => placeholder.remove());
-    }
-
-    if (currentLineBlocks.length === 0) {
-      const placeholder = createBlock("");
-      placeholder.classList.add("placeholder");
-      dragboxes[lineIndex].appendChild(placeholder);
-    }
   });
+  function moverItem(linha, posicaoX){
+    const dragging = document.querySelector(".dragging");
+      const applyAfter = getNewPosition(linha, posicaoX);
+      if (applyAfter) {
+        applyAfter.insertAdjacentElement("afterend", dragging);
+      } else {
+        linha.prepend(dragging);
+      }
+  }
 }
+
+const bt_prox = document.querySelector(".proximo") 
+function mudarfase(){
+  let fase_atual = 0
+
+  // const bt_ant = document.querySelector(".anterior") 
+  const el_instrucoes = document.querySelector("#instrucoes") 
+
+  populateBox(fases[fase_atual])
+
+  // bt_ant.addEventListener("click", ()=>{
+  //   if (!bt_ant.classList.contains("bloqueado")) {
+  //     fase_atual -=1
+  //     populateBox(fases[fase_atual])
+  //     el_instrucoes.innerText = instrucoes[fase_atual]
+  //     bt_ant.classList.remove("bloqueado")
+  //   }
+  //   if (fase_atual==0) {
+  //     bt_ant.classList.add("bloqueado")
+  //   }else{
+  //     bt_ant.classList.remove("bloqueado")
+  //   }
+  //   if (fase_atual==3) {
+  //     bt_prox.classList.add("bloqueado")
+  //   }else{
+  //     bt_prox.classList.remove("bloqueado")
+  //   }
+  // })
+  bt_prox.addEventListener("click", ()=>{
+    if (!bt_prox.classList.contains("bloqueado")) {
+      fase_atual +=1
+      el_instrucoes.innerText = instrucoes[fase_atual]
+      bt_prox.classList.add("bloqueado")
+    }if (fase_atual==fases.length-1) {
+      bt_prox.classList.add("invisivel")
+      let codeLines = document.querySelectorAll(".code-line");
+      codeLines.forEach((item)=>{
+        item.remove()
+      })
+      box.innerHTML = fases[fase_atual]
+    }else{
+      populateBox(fases[fase_atual])
+    }
+    // else{
+    //   bt_prox.classList.remove("bloqueado")
+    // }
+    // if (fase_atual==0) {
+    //   bt_ant.classList.add("bloqueado")
+    // }else{
+    //   bt_ant.classList.remove("bloqueado")
+    // }
+  })
+
+  
+}
+
+mudarfase()
